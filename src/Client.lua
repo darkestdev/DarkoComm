@@ -32,8 +32,8 @@ function Client:GetServiceMethods(Middleware: table | nil)
 			Methods[MethodKey] = function(_self: any, ...: any)
 				local PackedArgs: Types.TableType = table.pack(...)
 				PackedArgs.n = nil
-				print(`[DarkoKnit] [InvokeServerAsync] [{self.ServiceName}] [{MethodKey}]:`)
-				print(PackedArgs)
+				--print(`[DarkoKnit] [InvokeServerAsync] [{self.ServiceName}] [{MethodKey}]:`)
+				--print(PackedArgs)
 				return table.unpack(Bridge:InvokeServerAsync(PackedArgs))
 			end
 		elseif MethodType == "Signal" then

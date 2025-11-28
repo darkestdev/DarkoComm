@@ -30,8 +30,8 @@ function Server:WrapMethod(Table: Types.TableType, Name: string, InboundMiddlewa
 	self.Calls[Name] = 0
 
 	Bridge.OnServerInvoke = function(Player: Player, Content: Types.TableType)
-		print(`[DarkoKnit] [OnServerInvoke] [{self.ServiceName}] [{Name}]:`)
-		print(Content)
+		--print(`[DarkoKnit] [OnServerInvoke] [{self.ServiceName}] [{Name}]:`)
+		--print(Content)
 		self.Calls[Name] += 1
 		return table.pack(Table[Name](Table, Player, table.unpack(Content)))
 	end
